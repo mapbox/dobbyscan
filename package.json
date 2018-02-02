@@ -1,6 +1,6 @@
 {
   "name": "dobbyscan",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "description": "A very fast density based clustering library for geographic points",
   "homepage": "https://github.com/mapbox/dobbyscan",
   "keywords": [
