@@ -1,5 +1,8 @@
 ## dobbyscan
 
+[![Build Status](https://travis-ci.org/mapbox/dobbyscan.svg?branch=master)](https://travis-ci.org/mapbox/dobbyscan)
+[![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects)
+
 A very fast density based clustering JavaScript library for geographic points.
 
 ### Example
