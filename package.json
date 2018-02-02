@@ -1,0 +1,36 @@
+{
+  "name": "dobbyscan",
+  "version": "3.0.0",
+  "description": "A very fast density based clustering library for geographic points",
+  "homepage": "https://github.com/mapbox/dobbyscan",
+  "keywords": [
+    "clustering",
+    "spatial",
+    "geographic",
+    "algorithm",
+    "dbscan",
+    "density"
+  ],
+  "author": "Vladimir Agafonkin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mapbox/dobbyscan.git"
+  },
+  "scripts": {
+    "pretest": "eslint index.js",
+    "test": "tape test.js"
+  },
+  "dependencies": {
+    "geokdbush": "^1.1.0",
+    "kdbush": "^1.0.1"
+  },
+  "devDependencies": {
+    "all-the-cities": "^2.0.1",
+    "eslint": "^4.16.0",
+    "eslint-config-mourner": "^2.0.3",
+    "tape": "^4.8.0"
+  },
+  "eslintConfig": {
+    "extends": "mourner"
+  }
+}
