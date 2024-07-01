@@ -2,6 +2,8 @@
   "name": "dobbyscan",
   "version": "1.0.0",
   "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
   "description": "A very fast density based clustering library for geographic points",
   "homepage": "https://github.com/mapbox/dobbyscan",
   "keywords": [
@@ -12,6 +14,7 @@
     "dbscan",
     "density"
   ],
+  "files": [],
   "author": "Volodymyr Agafonkin",
   "repository": {
     "type": "git",
