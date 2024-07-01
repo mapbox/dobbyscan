@@ -1,11 +1,11 @@
-## dobbyscan [![Build Status](https://travis-ci.org/mapbox/dobbyscan.svg?branch=master)](https://travis-ci.org/mapbox/dobbyscan) [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects)
+## dobbyscan [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects)
 
 A very fast density based clustering JavaScript library for geographic points. Implements a variation of [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN) with great circle distance metric.
 
 ### Example
 
 ```js
-var clusters = dobbyscan(points, radius, (p) => p.lon, (p) => p.lat);
+const clusters = dobbyscan(points, radius, p => p.lon, p => p.lat);
 ```
 
 ### API
@@ -21,7 +21,7 @@ Returns an array of clusters, where each cluster is an array of points (from the
 
 ### Performance
 
-This library is incredibly fast — run `bench.js` to see it cluster 140k points in a couple seconds.
+This library is incredibly fast — run `bench.js` to see it cluster 135k points in one second.
 
 ### Install
 

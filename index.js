@@ -1,50 +1,35 @@
-'use strict';
 
-var kdbush = require('kdbush');
-var geokdbush = require('geokdbush');
+import KDBush from 'kdbush';
+import {around} from 'geokdbush';
 
-module.exports = dobbyscan;
+export default function dobbyscan(points, radius, getLng = p => p[0], getLat = p => p[1]) {
 
-function defaultGetLng(p) { return p[0]; }
-function defaultGetLat(p) { return p[1]; }
+    const index = new KDBush(points.length);
+    for (const p of points) index.add(getLng(p), getLat(p));
+    index.finish();
 
-function dobbyscan(points, radius, getLng, getLat) {
-    if (!getLng) getLng = defaultGetLng;
-    if (!getLat) getLat = defaultGetLat;
-
-    var pointIds = new Uint32Array(points.length);
-    for (var i = 0; i < points.length; i++) {
-        pointIds[i] = i;
-    }
-
-    function getLngI(i) { return getLng(points[i]); }
-    function getLatI(i) { return getLat(points[i]); }
-
-    var index = kdbush(pointIds, getLngI, getLatI);
-
-    var clusters = [];
-    var clustered = new Uint8Array(points.length);
+    const clusters = [];
+    const clustered = new Uint8Array(points.length);
 
     function isUnclustered(i) {
         return !clustered[i];
     }
 
-    for (i = 0; i < points.length; i++) {
+    for (let i = 0; i < points.length; i++) {
         if (clustered[i]) continue;
 
-        var cluster = [];
-        var searchQueue = [i];
+        const cluster = [];
+        const searchQueue = [i];
         clustered[i] = 1;
 
         while (searchQueue.length) {
-            var j = searchQueue.pop();
-            cluster.push(points[j]);
+            const j = searchQueue.pop();
+            const p = points[j];
+            cluster.push(p);
 
-            var unclusteredNeighbors = geokdbush.around(
-                index, getLngI(j), getLatI(j), Infinity, radius, isUnclustered);
+            const unclusteredNeighbors = around(index, getLng(p), getLat(p), Infinity, radius, isUnclustered);
 
-            for (var k = 0; k < unclusteredNeighbors.length; k++) {
-                var q = unclusteredNeighbors[k];
+            for (const q of unclusteredNeighbors) {
                 clustered[q] = 1;
                 searchQueue.push(q);
             }
