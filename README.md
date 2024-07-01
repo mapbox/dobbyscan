@@ -1,4 +1,4 @@
-## dobbyscan [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects)
+## dobbyscan [![Node](https://github.com/mapbox/dobbyscan/actions/workflows/node.yml/badge.svg)](https://github.com/mapbox/dobbyscan/actions/workflows/node.yml) [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects)
 
 A very fast density based clustering JavaScript library for geographic points. Implements a variation of [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN) with great circle distance metric.
 
