@@ -21,7 +21,7 @@ Returns an array of clusters, where each cluster is an array of points (from the
 
 ### Performance
 
-This library is incredibly fast — run `bench.js` to see it cluster 135k points in one second.
+This library is incredibly fast — run `bench.js` to see it cluster 135k points in ~170ms.
 
 ### Install
 
